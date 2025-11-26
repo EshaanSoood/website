@@ -467,3 +467,112 @@ html, body {
 .dr-boat2 {
   right: 2rem;
 }
+
+/* =====================================================
+   Mobile-Only Overrides (max-width: 768px)
+   =====================================================
+   These rules ONLY affect viewports ≤768px.
+   Desktop styles above remain 100% unchanged.
+   ===================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Hero card & credits → expand to full width on mobile */
+  .dr-hero-card {
+    max-width: 100%;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .dr-credits .pane {
+    max-width: 100%;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  /* 2. Hero top margin → reduce from 23rem to 8rem on mobile */
+  .dr-hero-card {
+    margin-top: 8rem;
+  }
+
+  /* Title image mobile adjustment */
+  .dr-title-png {
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  /* 3. Video height → responsive sizing on mobile */
+  .lowerthird-wrap {
+    height: min(300px, 50vh);
+  }
+
+  /* 4. Boat images → hide on mobile to prevent overlap */
+  .dr-boat,
+  .dr-boat2 {
+    display: none;
+  }
+
+  /* 5. Chapter sticky heading → reduce padding for mobile */
+  .chapters-block .chapter.active > h1:first-of-type,
+  .chapters-block .chapter.active > h2:first-of-type,
+  .chapters-block .chapter.active > h3:first-of-type,
+  .chapters-block .chapter.active > .chapter-title:first-of-type,
+  #experience-root .chapter.active > h1:first-of-type,
+  #experience-root .chapter.active > h2:first-of-type,
+  #experience-root .chapter.active > h3:first-of-type,
+  #experience-root .chapter.active > .chapter-title:first-of-type {
+    padding: 6px 8px;
+    font-size: 1.25rem;
+  }
+
+  /* 6. CTA buttons → ensure minimum touch target size (44px) */
+  .cta,
+  .play-song-btn,
+  .listen-bar-btn,
+  .listen-shelf .listen-play {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 20px;
+  }
+
+  /* 7. Listen shelf → stack vertically on mobile */
+  .listen-shelf .listen-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .listen-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Rail gutters → tighter on mobile */
+  :root {
+    --rail-gutter: clamp(12px, 4vw, 24px);
+  }
+
+  /* Pane padding adjustment for mobile */
+  .pane {
+    padding: 12px;
+  }
+
+  /* Subchapter paragraph margins → tighter on mobile */
+  .chapter .sub.active p {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Embed wrapper → reduced padding on mobile */
+  .embed-wrapper {
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  /* Block margins → tighter on mobile */
+  .block {
+    padding: 12px;
+    margin: 8px 0;
+  }
+}
